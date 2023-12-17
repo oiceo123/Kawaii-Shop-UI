@@ -1,22 +1,47 @@
 import React from "react";
 import { Col, Row, Input, Button } from "antd";
-import { MenuBar } from "../../components/MenuBar";
-import type { MenuProps } from "antd";
+/* import { MenuBar } from "../../components/MenuBar";
+import type { MenuProps } from "antd"; */
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { SelectItem } from "../../components/Select";
+import ThailandIcon from "../../assets/svg/ThailandIcon";
+import AmericanIcon from "../../assets/svg/AmericanIcon";
 
-interface Props {
-  items: MenuProps["items"];
-  options: { value: string; label: string | React.JSX.Element }[] | undefined;
-}
+/* const items: MenuProps["items"] = [
+  {
+    label: <Link to={"/"}>Home</Link>,
+    key: "home",
+  },
+]; */
 
-const NavbarContainer: React.FC<Props> = ({ items, options }) => {
+const options = [
+  {
+    value: "Thai",
+    label: (
+      <>
+        <ThailandIcon style={{ width: "20px", marginRight: "5px" }} />
+        <span>ไทย</span>
+      </>
+    ),
+  },
+  {
+    value: "English",
+    label: (
+      <>
+        <AmericanIcon style={{ width: "18px", marginRight: "5px" }} />
+        <span>English</span>
+      </>
+    ),
+  },
+];
+
+const NavbarContainer: React.FC = () => {
   return (
     <>
-      <Row style={{ height: "64px"/* , boxShadow: 'rgba(0, 0, 0, 0.05) 0px 5px 10px' */ }}>
+      <Row className="web-navbar-row-e779b166">
         <Col span={3} className="web-navbar-col-06d3241b">
           <Link to={"/"}>
             <img
@@ -43,9 +68,15 @@ const NavbarContainer: React.FC<Props> = ({ items, options }) => {
             <MenuBar items={items} />
           </div> */}
           <div>
-            <SelectItem options={options} />
+            <SelectItem
+              size="large"
+              bordered={false}
+              defaultValue="Thai"
+              style={{ width: 120 }}
+              options={options}
+            />
           </div>
-          <div>
+          <Link to="/signin">
             <Button
               style={{ borderColor: "#e6e6e6" }}
               icon={
@@ -61,7 +92,7 @@ const NavbarContainer: React.FC<Props> = ({ items, options }) => {
             >
               Sign in
             </Button>
-          </div>
+          </Link>
         </Col>
       </Row>
     </>

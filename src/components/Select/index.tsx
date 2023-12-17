@@ -1,28 +1,32 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Select } from "antd";
 
-interface Props {
-  options:
-    | {
-        value: string;
-        label: string | React.JSX.Element;
-      }[]
-    | undefined;
+export interface Option {
+  value: string;
+  label: string | ReactNode;
 }
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
+interface Props {
+  size: "large" | "middle" | "small";
+  defaultValue: string;
+  bordered: boolean;
+  style: React.CSSProperties;
+  options: Option[];
+  onChange?: (value: string, option: Option | Option[]) => void;
+}
 
-const SelectComponent: React.FC<Props> = ({ options }) => (
-  <Select
-    size="large"
-    defaultValue="Thai"
-    bordered={false}
-    style={{ width: 120 }}
-    onChange={handleChange}
-    options={options}
-  />
-);
+const SelectComponent: React.FC<Props> = (props) => {
+  const { size, defaultValue, bordered, style, options, onChange } = props;
+  return (
+    <Select
+      size={size}
+      defaultValue={defaultValue}
+      bordered={bordered}
+      style={style}
+      options={options}
+      onChange={onChange}
+    />
+  );
+};
 
 export const SelectItem = SelectComponent;
