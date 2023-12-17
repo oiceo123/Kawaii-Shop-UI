@@ -1,3 +1,12 @@
+.web-navbar-row-e779b166 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 64px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 5px 10px;
+  background-color: white;
+}
+
 .web-navbar-col-06d3241b {
   display: flex;
   justify-content: center;
