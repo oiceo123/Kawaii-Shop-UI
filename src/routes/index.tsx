@@ -1,48 +1,17 @@
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import type { MenuProps } from "antd";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar } from "../containers/Navbar";
-import { Home } from "../containers/Home";
-import ThailandIcon from "../assets/svg/ThailandIcon";
-import AmericanIcon from "../assets/svg/AmericanIcon";
-
-const items: MenuProps["items"] = [
-  {
-    label: <Link to={"/"}>Home</Link>,
-    key: "home",
-  },
-];
-
-const options = [
-  {
-    value: "Thai",
-    label: (
-      <>
-        <ThailandIcon
-          style={{ width: "20px", marginRight: "5px" }}
-        />
-        <span>ไทย</span>
-      </>
-    ),
-  },
-  {
-    value: "English",
-    label: (
-      <>
-        <AmericanIcon
-          style={{ width: "18px", marginRight: "5px" }}
-        />
-        <span>English</span>
-      </>
-    ),
-  },
-];
+import Home from "../pages/Home";
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/SignUp";
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Navbar items={items} options={options} />
+      <Navbar />
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/signin" component={SignIn} exact />
+        <Route path="/signup" component={SignUp} exact />
       </Switch>
     </BrowserRouter>
   );
