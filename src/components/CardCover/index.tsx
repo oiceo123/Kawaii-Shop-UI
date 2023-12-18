@@ -2,7 +2,7 @@ import React from "react";
 import { ReactNode } from "react";
 import { Card } from "antd";
 
-interface Props {
+interface CardCoverProps {
   style?: React.CSSProperties;
   cover: ReactNode;
   title: string;
@@ -11,7 +11,7 @@ interface Props {
 
 const { Meta } = Card;
 
-const CardCoverComponent: React.FC<Props> = (props) => {
+const CardCoverComponent: React.FC<CardCoverProps> = (props) => {
   const { style, cover, title, description } = props;
 
   return (
@@ -21,4 +21,4 @@ const CardCoverComponent: React.FC<Props> = (props) => {
   );
 };
 
-export const CardCover = CardCoverComponent;
+export default CardCoverComponent;

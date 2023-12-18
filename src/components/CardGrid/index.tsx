@@ -1,13 +1,13 @@
 import React from "react";
 import { Card } from "antd";
 
-interface Props {
+interface CardGridProps {
   title: string;
   bordered: boolean;
   style: React.CSSProperties;
 }
 
-const CardGridComponent: React.FC<Props> = (props) => {
+const CardGridComponent: React.FC<CardGridProps> = (props) => {
   const { title, bordered, style } = props;
 
   return (
@@ -36,4 +36,4 @@ const CardGridComponent: React.FC<Props> = (props) => {
   );
 };
 
-export const CardGrid = CardGridComponent;
+export default CardGridComponent;

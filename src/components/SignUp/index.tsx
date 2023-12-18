@@ -7,7 +7,7 @@ interface FormType {
   confirm: string;
 }
 
-const SignUp: React.FC = () => {
+const SignUpComponent: React.FC = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values: FormType) => {
@@ -91,4 +91,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export const SignUpForm =  SignUpComponent;

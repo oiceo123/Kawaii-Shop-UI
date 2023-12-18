@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { SelectItem } from "../../components/Select";
+import SelectComponent from "../../components/Select";
 import ThailandIcon from "../../assets/svg/ThailandIcon";
 import AmericanIcon from "../../assets/svg/AmericanIcon";
 
@@ -68,7 +68,7 @@ const NavbarContainer: React.FC = () => {
             <MenuBar items={items} />
           </div> */}
           <div>
-            <SelectItem
+            <SelectComponent
               size="large"
               bordered={false}
               defaultValue="Thai"
@@ -99,4 +99,4 @@ const NavbarContainer: React.FC = () => {
   );
 };
 
-export const Navbar = NavbarContainer;
+export default NavbarContainer;

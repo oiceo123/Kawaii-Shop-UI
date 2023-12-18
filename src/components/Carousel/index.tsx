@@ -1,11 +1,11 @@
 import { Carousel } from "antd";
 
-interface Props {
+interface CarouselProps {
   autoplay: boolean;
   style: React.CSSProperties;
 }
 
-const CarouselComponent: React.FC<Props> = (props) => {
+const CarouselComponent: React.FC<CarouselProps> = (props) => {
   const { autoplay, style } = props;
 
   return (
@@ -26,4 +26,4 @@ const CarouselComponent: React.FC<Props> = (props) => {
   );
 };
 
-export const CarouselItem = CarouselComponent;
+export default CarouselComponent;

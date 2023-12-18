@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
 import { Select } from "antd";
 
-export interface Option {
+interface Option {
   value: string;
   label: string | ReactNode;
 }
 
-interface Props {
+interface SelectProps {
   size: "large" | "middle" | "small";
   defaultValue: string;
   bordered: boolean;
@@ -15,7 +15,7 @@ interface Props {
   onChange?: (value: string, option: Option | Option[]) => void;
 }
 
-const SelectComponent: React.FC<Props> = (props) => {
+const SelectComponent: React.FC<SelectProps> = (props) => {
   const { size, defaultValue, bordered, style, options, onChange } = props;
   return (
     <Select
@@ -29,4 +29,4 @@ const SelectComponent: React.FC<Props> = (props) => {
   );
 };
 
-export const SelectItem = SelectComponent;
+export default SelectComponent;

@@ -1,15 +1,15 @@
 import "./Home.css";
 import { Col, Row } from "antd";
-import { CarouselItem } from "../../components/Carousel";
-import { CardGrid } from "../../components/CardGrid";
-import { CardCover } from "../../components/CardCover";
+import CarouselComponent from "../../components/Carousel";
+import CardGridComponent from "../../components/CardGrid";
+import CardCoverComponent from "../../components/CardCover";
 
 const Home: React.FC = () => {
   return (
     <>
       <Row justify={"center"}>
         <Col span={21}>
-          <CarouselItem
+          <CarouselComponent
             autoplay={true}
             style={{
               margin: "0",
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       </Row>
       <Row justify={"center"} style={{ marginTop: "24px" }}>
         <Col span={21}>
-          <CardGrid
+          <CardGridComponent
             title="หมวดหมู่"
             bordered={true}
             style={{ width: "10%", height: "151px", textAlign: "center" }}
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
           </Row>
           <Row gutter={[16, 16]} style={{ marginTop: "24px" }}>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
               />
             </Col>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
               />
             </Col>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
               />
             </Col>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
               />
             </Col>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
               />
             </Col>
             <Col span={4}>
-              <CardCover
+              <CardCoverComponent
                 style={{ width: "186px", borderRadius: 0 }}
                 cover={
                   <img
