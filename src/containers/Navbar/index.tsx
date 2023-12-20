@@ -3,7 +3,7 @@ import { Col, Row, Input, Button } from "antd";
 /* import { MenuBar } from "../../components/MenuBar";
 import type { MenuProps } from "antd"; */
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./Navbar.scss";
 import logo from "../../assets/logo.png";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import SelectComponent from "../../components/Select";

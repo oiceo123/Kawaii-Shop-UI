@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./Home.scss";
 import { Col, Row } from "antd";
 import CarouselComponent from "../../components/Carousel";
 import CardGridComponent from "../../components/CardGrid";
