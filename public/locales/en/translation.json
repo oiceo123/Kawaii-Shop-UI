@@ -1,0 +1,21 @@
+{
+  "_comment.button": "Button",
+  "button.login": "Login",
+
+  "_comment.navbar": "Navbar",
+  "navbar.input.search.placeholder": "Search for what you want.",
+
+  "_comment.category": "Category",
+  "page.header.home.title.category": "Categories",
+  "page.header.home.title.recommended.products": "Recommended products",
+
+  "_comment.page.signin": "Sign In",
+  "page.header.signin.title.login": "Log In",
+  "page.body.signin.email.placeholder": "Email",
+  "page.body.signin.email.message.error": "The input is not valid E-mail!",
+  "page.body.signin.email.message.required": "Please input your E-mail!",
+  "page.body.signin.password.placeholder": "Password",
+  "page.body.signin.password.message.required": "Please input your password!",
+  "page.footer.sigin.message.question": "Have you just entered the Kawaii Shop, right?",
+  "page.footer.sigin.message.signup": "Sign Up"
+}

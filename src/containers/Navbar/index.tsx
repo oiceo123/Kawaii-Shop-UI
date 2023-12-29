@@ -9,6 +9,7 @@ import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import SelectComponent from "../../components/Select";
 import ThailandIcon from "../../assets/svg/ThailandIcon";
 import AmericanIcon from "../../assets/svg/AmericanIcon";
+import { useTranslation } from "react-i18next";
 
 /* const items: MenuProps["items"] = [
   {
@@ -19,7 +20,7 @@ import AmericanIcon from "../../assets/svg/AmericanIcon";
 
 const options = [
   {
-    value: "Thai",
+    value: "th",
     label: (
       <>
         <ThailandIcon style={{ width: "20px", marginRight: "5px" }} />
@@ -28,7 +29,7 @@ const options = [
     ),
   },
   {
-    value: "English",
+    value: "en",
     label: (
       <>
         <AmericanIcon style={{ width: "18px", marginRight: "5px" }} />
@@ -39,6 +40,12 @@ const options = [
 ];
 
 const NavbarContainer: React.FC = () => {
+  const { t, i18n } = useTranslation();
+
+  const handleChange = (value: string) => {
+    i18n.changeLanguage(value);
+  };
+
   return (
     <>
       <Row className="web-navbar-row-e779b166">
@@ -59,7 +66,7 @@ const NavbarContainer: React.FC = () => {
               width: "80%",
             }}
             bordered={false}
-            placeholder="Enter your username"
+            placeholder={t("navbar.input.search.placeholder")}
             prefix={<SearchOutlined style={{ color: "#C2C2C2" }} />}
           />
         </Col>
@@ -71,9 +78,10 @@ const NavbarContainer: React.FC = () => {
             <SelectComponent
               size="large"
               bordered={false}
-              defaultValue="Thai"
+              defaultValue="th"
               style={{ width: 120 }}
               options={options}
+              onChange={handleChange}
             />
           </div>
           <Link to="/signin">
@@ -90,7 +98,7 @@ const NavbarContainer: React.FC = () => {
               }
               size="large"
             >
-              Sign in
+              {t("button.login")}
             </Button>
           </Link>
         </Col>

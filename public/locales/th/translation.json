@@ -1,0 +1,21 @@
+{
+  "_comment.button": "Button",
+  "button.login": "เข้าสู่ระบบ",
+
+  "_comment.navbar": "Navbar",
+  "navbar.input.search.placeholder": "ค้นหาสิ่งที่คุณต้องการ",
+
+  "_comment.category": "Category",
+  "page.header.home.title.category": "หมวดหมู่",
+  "page.header.home.title.recommended.products": "สินค้าแนะนำ",
+
+  "_comment.page.signin": "Sign In",
+  "page.header.signin.title.login": "เข้าสู่ระบบ",
+  "page.body.signin.email.placeholder": "อีเมล",
+  "page.body.signin.email.message.error": "อีเมลไม่ถูกต้อง",
+  "page.body.signin.email.message.required": "กรุณากรอกอีเมล",
+  "page.body.signin.password.placeholder": "รหัสผ่าน",
+  "page.body.signin.password.message.required": "กรุณากรอกรหัสผ่าน",
+  "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่",
+  "page.footer.sigin.message.signup": "สมัครสมาชิก"
+}

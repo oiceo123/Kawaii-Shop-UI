@@ -12,7 +12,7 @@ interface SelectProps {
   bordered: boolean;
   style: React.CSSProperties;
   options: Option[];
-  onChange?: (value: string, option: Option | Option[]) => void;
+  onChange?: (value: string) => void;
 }
 
 const SelectComponent: React.FC<SelectProps> = (props) => {

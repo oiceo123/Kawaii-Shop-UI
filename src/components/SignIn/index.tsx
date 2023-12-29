@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Button, Form, Input, Row, Col, Flex } from "antd";
 import { SignInForm } from "../../pages/SignIn";
 
@@ -8,7 +9,7 @@ interface SignInProps {
 
 const SignInComponent: React.FC<SignInProps> = (props) => {
   const { onSignIn } = props;
-
+  const { t } = useTranslation();
   const [form] = Form.useForm();
 
   return (
@@ -26,16 +27,16 @@ const SignInComponent: React.FC<SignInProps> = (props) => {
             rules={[
               {
                 type: "email",
-                message: "The input is not valid E-mail!",
+                message: t("page.body.signin.email.message.error"),
               },
               {
                 required: true,
-                message: "Please input your E-mail!",
+                message: t("page.body.signin.email.message.required"),
               },
             ]}
-            style={{marginBottom: "28px"}} 
+            style={{ marginBottom: "28px" }}
           >
-            <Input placeholder="Email"/>
+            <Input placeholder={t("page.body.signin.email.placeholder")} />
           </Form.Item>
 
           <Form.Item
@@ -43,18 +44,20 @@ const SignInComponent: React.FC<SignInProps> = (props) => {
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: t("page.body.signin.password.message.required"),
               },
             ]}
-            style={{marginBottom: "32px"}} 
+            style={{ marginBottom: "32px" }}
           >
-            <Input.Password placeholder="Password" />
+            <Input.Password
+              placeholder={t("page.body.signin.password.placeholder")}
+            />
           </Form.Item>
 
           <Form.Item>
             <Flex vertical gap="small" style={{ width: "100%" }}>
               <Button type="primary" size="large" htmlType="submit">
-                Login
+                {t("button.login")}
               </Button>
             </Flex>
           </Form.Item>
