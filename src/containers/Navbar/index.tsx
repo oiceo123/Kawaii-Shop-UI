@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Col, Row, Input, Button } from "antd";
 /* import { MenuBar } from "../../components/MenuBar";
 import type { MenuProps } from "antd"; */
@@ -10,6 +10,7 @@ import SelectComponent from "../../components/Select";
 import ThailandIcon from "../../assets/svg/ThailandIcon";
 import AmericanIcon from "../../assets/svg/AmericanIcon";
 import { useTranslation } from "react-i18next";
+/* import { useHistory } from "react-router-dom"; */
 
 /* const items: MenuProps["items"] = [
   {
@@ -40,10 +41,13 @@ const options = [
 ];
 
 const NavbarContainer: React.FC = () => {
+  const defaultValue = useRef(localStorage.getItem("i18nextLng"));
   const { t, i18n } = useTranslation();
+  /* const history = useHistory(); */
 
   const handleChange = (value: string) => {
     i18n.changeLanguage(value);
+    /* history.go(0); */
   };
 
   return (
@@ -78,7 +82,7 @@ const NavbarContainer: React.FC = () => {
             <SelectComponent
               size="large"
               bordered={false}
-              defaultValue="th"
+              defaultValue={defaultValue.current || "en"}
               style={{ width: 120 }}
               options={options}
               onChange={handleChange}
@@ -98,7 +102,7 @@ const NavbarContainer: React.FC = () => {
               }
               size="large"
             >
-              {t("button.login")}
+              {t("navbar.button.login")}
             </Button>
           </Link>
         </Col>
