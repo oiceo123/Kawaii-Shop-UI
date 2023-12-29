@@ -57,7 +57,7 @@ const SignInComponent: React.FC<SignInProps> = (props) => {
           <Form.Item>
             <Flex vertical gap="small" style={{ width: "100%" }}>
               <Button type="primary" size="large" htmlType="submit">
-                {t("button.login")}
+                {t("message.login")}
               </Button>
             </Flex>
           </Form.Item>

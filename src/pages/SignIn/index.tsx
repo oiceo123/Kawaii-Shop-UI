@@ -1,5 +1,4 @@
 import React from "react";
-import "./Signin.scss";
 import { Link } from "react-router-dom";
 import { Row, Col, Typography } from "antd";
 import SignInComponent from "../../components/SignIn";
@@ -20,14 +19,14 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <Row className="web-signin-row-b6ec84c8">
+    <Row className="web-signin-signup-row-b6ec84c8">
       <Col span={10}>
         <div className="web-logo-text">Kawaii Shop</div>
       </Col>
-      <Col span={8} className="web-signin-col-0f1d06da">
+      <Col span={8} className="web-signin-signup-col-0f1d06da">
         <div>
-          <div className="web-signin-title-cad17028">
-            {t("page.header.signin.title.login")}
+          <div className="web-signin-signup-title-cad17028">
+            {t("message.login")}
           </div>
           <SignInComponent onSignIn={onSignIn} />
         </div>
@@ -35,7 +34,7 @@ const SignIn: React.FC = () => {
           <Text type="secondary">
             {t("page.footer.sigin.message.question")}{" "}
           </Text>
-          <Link to={"/signup"}>{t("page.footer.sigin.message.signup")}</Link>
+          <Link to={"/signup"}>{t("message.signup")}</Link>
         </div>
       </Col>
     </Row>
