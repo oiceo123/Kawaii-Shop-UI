@@ -1,69 +1,65 @@
 import React from "react";
-import { Button, Form, Input, Row, Col } from "antd";
+import { useTranslation } from "react-i18next";
+import { Button, Form, Input, Row, Col, Flex } from "antd";
+import { SignUpForm } from "../../pages/SignUp";
 
-interface FormType {
-  email: string;
-  password: string;
-  confirm: string;
+interface SignUpProps {
+  onSignUp: (value: SignUpForm) => void;
 }
 
-const SignUpComponent: React.FC = () => {
-  const [form] = Form.useForm();
+const SignUpComponent: React.FC<SignUpProps> = (props) => {
+  const { t } = useTranslation();
+  const { onSignUp } = props;
 
-  const onFinish = (values: FormType) => {
-    console.log("Received values of form: ", values);
-  };
+  const [form] = Form.useForm();
 
   return (
     <Row>
-      <Col>
+      <Col span={24}>
         <Form
           form={form}
           name="register"
-          onFinish={onFinish}
-          style={{ maxWidth: 600 }}
+          size="large"
+          onFinish={onSignUp}
           scrollToFirstError
         >
           <Form.Item
-            name="email"
-            label="E-mail"
+            name="username"
             rules={[
               {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
                 required: true,
-                message: "Please input your E-mail!",
+                message: t("page.body.signup.username.message.required"),
               },
             ]}
+            style={{ marginBottom: "28px" }}
           >
-            <Input />
+            <Input placeholder={t("page.body.signup.username.placeholder")} />
           </Form.Item>
 
           <Form.Item
             name="password"
-            label="Password"
             rules={[
               {
                 required: true,
-                message: "Please input your password!",
+                message: t("page.body.signup.password.message.required"),
               },
             ]}
-            hasFeedback
+            style={{ marginBottom: "28px" }}
           >
-            <Input.Password />
+            <Input.Password
+              placeholder={t("page.body.signup.password.placeholder")}
+            />
           </Form.Item>
 
           <Form.Item
             name="confirm"
-            label="Confirm Password"
             dependencies={["password"]}
-            hasFeedback
             rules={[
               {
                 required: true,
-                message: "Please confirm your password!",
+                message: t(
+                  "page.body.signup.confirm.password.message.required"
+                ),
               },
               ({ getFieldValue }) => ({
                 validator(_, value) {
@@ -71,19 +67,43 @@ const SignUpComponent: React.FC = () => {
                     return Promise.resolve();
                   }
                   return Promise.reject(
-                    new Error("The new password that you entered do not match!")
+                    new Error(
+                      t("page.body.signup.confirm.password.message.error")
+                    )
                   );
                 },
               }),
             ]}
+            style={{ marginBottom: "28px" }}
           >
-            <Input.Password />
+            <Input.Password
+              placeholder={t("page.body.signup.confirm.password.placeholder")}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="email"
+            rules={[
+              {
+                type: "email",
+                message: t("page.body.signup.email.message.error"),
+              },
+              {
+                required: true,
+                message: t("page.body.signup.email.message.required"),
+              },
+            ]}
+            style={{ marginBottom: "32px" }}
+          >
+            <Input placeholder={t("page.body.signup.email.placeholder")} />
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Register
-            </Button>
+            <Flex vertical gap="small" style={{ width: "100%" }}>
+              <Button type="primary" size="large" htmlType="submit">
+                {t("message.signup")}
+              </Button>
+            </Flex>
           </Form.Item>
         </Form>
       </Col>
@@ -91,4 +111,4 @@ const SignUpComponent: React.FC = () => {
   );
 };
 
-export const SignUpForm =  SignUpComponent;
+export default SignUpComponent;

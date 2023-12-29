@@ -1,94 +1,45 @@
 import React from "react";
-import { Button, Form, Input, Row, Col } from "antd";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { Row, Col, Typography } from "antd";
+import SignUpComponent from "../../components/SignUp";
 
-interface FormType {
+export interface SignUpForm {
   email: string;
   password: string;
   confirm: string;
 }
 
-const SignUp: React.FC = () => {
-  const [form] = Form.useForm();
+const { Text } = Typography;
 
-  const onFinish = (values: FormType) => {
-    console.log("Received values of form: ", values);
-  };
+const SignUpContainer: React.FC = () => {
+  const { t } = useTranslation();
+
+  function onSignUp(value: SignUpForm) {
+    console.log("SignUp value: ", value);
+  }
 
   return (
-    <Row>
-      <Col>
-        <Form
-          form={form}
-          name="register"
-          onFinish={onFinish}
-          style={{ maxWidth: 600 }}
-          scrollToFirstError
-        >
-          <Form.Item
-            name="email"
-            label="E-mail"
-            rules={[
-              {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!",
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            name="password"
-            label="Password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-            hasFeedback
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item
-            name="confirm"
-            label="Confirm Password"
-            dependencies={["password"]}
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: "Please confirm your password!",
-              },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue("password") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    new Error("The new password that you entered do not match!")
-                  );
-                },
-              }),
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Register
-            </Button>
-          </Form.Item>
-        </Form>
+    <Row className="web-signin-signup-row-b6ec84c8">
+      <Col span={10}>
+        <div className="web-logo-text">Kawaii Shop</div>
+      </Col>
+      <Col span={8} className="web-signin-signup-col-0f1d06da">
+        <div>
+          <div className="web-signin-signup-title-cad17028">
+            {t("message.signup")}
+          </div>
+          <SignUpComponent onSignUp={onSignUp} />
+        </div>
+        <div style={{ textAlign: "center" }}>
+          <Text type="secondary">
+            {t("page.footer.signup.message.question")}{" "}
+          </Text>
+          <Link to={"/signin"}>{t("message.login")}</Link>
+        </div>
       </Col>
     </Row>
   );
 };
 
-export default SignUp;
+export default SignUpContainer;

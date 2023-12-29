@@ -1,21 +1,34 @@
 {
-  "_comment.button": "Button",
-  "button.login": "เข้าสู่ระบบ",
+  "_comment.message": "Message",
+  "message.signup": "สมัครสมาชิก",
+  "message.login": "เข้าสู่ระบบ",
 
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "ค้นหาสิ่งที่คุณต้องการ",
+  "navbar.button.login": "เข้าสู่ระบบ",
 
   "_comment.category": "Category",
   "page.header.home.title.category": "หมวดหมู่",
   "page.header.home.title.recommended.products": "สินค้าแนะนำ",
 
+  "_comment.page.signup": "Sign Up",
+  "page.body.signup.username.placeholder": "ชื่อผู้ใช้",
+  "page.body.signup.username.message.required": "กรุณากรอกชื่อผู้ใช้",
+  "page.body.signup.password.placeholder": "รหัสผ่าน",
+  "page.body.signup.password.message.required": "กรุณากรอกรหัสผ่าน",
+  "page.body.signup.confirm.password.placeholder": "ยืนยันรหัสผ่าน",
+  "page.body.signup.confirm.password.message.required": "กรุณายืนยันรหัสผ่าน",
+  "page.body.signup.confirm.password.message.error": "รหัสผ่านไม่ตรงกัน",
+  "page.body.signup.email.placeholder": "อีเมล",
+  "page.body.signup.email.message.error": "อีเมลไม่ถูกต้อง",
+  "page.body.signup.email.message.required": "กรุณากรอกอีเมล",
+  "page.footer.signup.message.question": "หากคุณมีบัญชีแล้ว คุณสามารถ",
+
   "_comment.page.signin": "Sign In",
-  "page.header.signin.title.login": "เข้าสู่ระบบ",
   "page.body.signin.email.placeholder": "อีเมล",
   "page.body.signin.email.message.error": "อีเมลไม่ถูกต้อง",
   "page.body.signin.email.message.required": "กรุณากรอกอีเมล",
   "page.body.signin.password.placeholder": "รหัสผ่าน",
   "page.body.signin.password.message.required": "กรุณากรอกรหัสผ่าน",
-  "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่",
-  "page.footer.sigin.message.signup": "สมัครสมาชิก"
+  "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่"
 }
