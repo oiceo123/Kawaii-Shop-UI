@@ -4,7 +4,7 @@ import { Col, Row, Input, Button } from "antd";
 import type { MenuProps } from "antd"; */
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/png/logo.png";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import SelectComponent from "../../components/Select";
 import ThailandIcon from "../../assets/svg/ThailandIcon";
