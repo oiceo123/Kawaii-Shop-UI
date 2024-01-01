@@ -1,37 +1,25 @@
 import React from "react";
 import { Card } from "antd";
 
-interface CardGridProps {
+interface CardGridProps<T> {
+  data: T[];
   title: string;
   bordered: boolean;
   style: React.CSSProperties;
+  renderItem: (item: T) => React.ReactNode;
 }
 
-const CardGridComponent: React.FC<CardGridProps> = (props) => {
-  const { title, bordered, style } = props;
+// eslint-disable-next-line
+const CardGridComponent: React.FC<CardGridProps<any>> = (props) => {
+  const { data, title, bordered, style, renderItem } = props;
 
   return (
     <Card title={title} bordered={bordered}>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
-      <Card.Grid style={style}>Content</Card.Grid>
+      {data.map((item, index) => (
+        <Card.Grid key={index} style={style}>
+          {renderItem(item)}
+        </Card.Grid>
+      ))}
     </Card>
   );
 };
