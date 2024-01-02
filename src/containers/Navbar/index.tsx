@@ -1,54 +1,57 @@
 import React, { useRef } from "react";
-import { Col, Row, Input, Button } from "antd";
-/* import { MenuBar } from "../../components/MenuBar";
-import type { MenuProps } from "antd"; */
 import { Link } from "react-router-dom";
-import "./Navbar.scss";
-import logo from "../../assets/png/logo.png";
-import { SearchOutlined, UserOutlined } from "@ant-design/icons";
-import SelectComponent from "../../components/Select";
-import ThailandIcon from "../../assets/svg/ThailandIcon";
-import AmericanIcon from "../../assets/svg/AmericanIcon";
 import { useTranslation } from "react-i18next";
+import { useAppSelector } from "../../redux";
 /* import { useHistory } from "react-router-dom"; */
 
-/* const items: MenuProps["items"] = [
-  {
-    label: <Link to={"/"}>Home</Link>,
-    key: "home",
-  },
-]; */
-
-const options = [
-  {
-    value: "th",
-    label: (
-      <>
-        <ThailandIcon style={{ width: "20px", marginRight: "5px" }} />
-        <span>ไทย</span>
-      </>
-    ),
-  },
-  {
-    value: "en",
-    label: (
-      <>
-        <AmericanIcon style={{ width: "18px", marginRight: "5px" }} />
-        <span>English</span>
-      </>
-    ),
-  },
-];
+import "./Navbar.scss";
+import { Col, Row, Input, Button, MenuProps } from "antd";
+import { SearchOutlined, UserOutlined } from "@ant-design/icons";
+import logo from "../../assets/png/logo.png";
+import ThailandIcon from "../../assets/svg/ThailandIcon";
+import AmericanIcon from "../../assets/svg/AmericanIcon";
+import SelectComponent from "../../components/Select";
+import AvatarDropdownComponent from "../../components/AvatarDropdown";
+import SignOutContainer from "../SignOut";
 
 const NavbarContainer: React.FC = () => {
   const defaultValue = useRef(localStorage.getItem("i18nextLng"));
   const { t, i18n } = useTranslation();
+  const { user } = useAppSelector((state) => state.auth);
   /* const history = useHistory(); */
 
   const handleChange = (value: string) => {
     i18n.changeLanguage(value);
     /* history.go(0); */
   };
+
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: <SignOutContainer />,
+    },
+  ];
+
+  const options = [
+    {
+      value: "th",
+      label: (
+        <>
+          <ThailandIcon style={{ width: "20px", marginRight: "5px" }} />
+          <span>ไทย</span>
+        </>
+      ),
+    },
+    {
+      value: "en",
+      label: (
+        <>
+          <AmericanIcon style={{ width: "18px", marginRight: "5px" }} />
+          <span>English</span>
+        </>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -75,9 +78,6 @@ const NavbarContainer: React.FC = () => {
           />
         </Col>
         <Col span={5} className="web-navbar-col-72ce1cb0">
-          {/* <div>
-            <MenuBar items={items} />
-          </div> */}
           <div>
             <SelectComponent
               size="large"
@@ -88,23 +88,32 @@ const NavbarContainer: React.FC = () => {
               onChange={handleChange}
             />
           </div>
-          <Link to="/signin">
-            <Button
-              style={{ borderColor: "#e6e6e6" }}
-              icon={
-                <UserOutlined
-                  style={{
-                    border: "1px solid #e6e6e6",
-                    borderRadius: "50%",
-                    fontSize: "18px",
-                  }}
-                />
-              }
-              size="large"
-            >
-              {t("navbar.button.login")}
-            </Button>
-          </Link>
+          {user ? (
+            <AvatarDropdownComponent
+              size={40}
+              icon={<UserOutlined />}
+              placement="bottomRight"
+              items={items}
+            />
+          ) : (
+            <Link to="/signin">
+              <Button
+                style={{ borderColor: "#e6e6e6" }}
+                icon={
+                  <UserOutlined
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      borderRadius: "50%",
+                      fontSize: "18px",
+                    }}
+                  />
+                }
+                size="large"
+              >
+                {t("navbar.button.login")}
+              </Button>
+            </Link>
+          )}
         </Col>
       </Row>
     </>
