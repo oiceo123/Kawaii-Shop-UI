@@ -4,7 +4,7 @@
   "message.login": "Log In",
 
   "_comment.message.error": "Message Error",
-  "message.error.internal.server.error": "An error occurred.",
+  "message.error.internal.server.error": "An error occurred. Please try again later.",
 
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "Search for what you want.",
@@ -35,5 +35,6 @@
   "page.body.signin.email.message.required": "Please input your E-mail!",
   "page.body.signin.password.placeholder": "Password",
   "page.body.signin.password.message.required": "Please input your password!",
+  "page.body.signin.email.or.password.invalid": "The username or password is incorrect.",
   "page.footer.sigin.message.question": "Have you just entered the Kawaii Shop, right?"
 }

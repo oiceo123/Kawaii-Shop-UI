@@ -4,7 +4,7 @@
   "message.login": "เข้าสู่ระบบ",
 
   "_comment.message.error": "Message Error",
-  "message.error.internal.server.error": "เกิดข้อผิดพลาด",
+  "message.error.internal.server.error": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้งในภายหลัง",
 
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "ค้นหาสิ่งที่คุณต้องการ",
@@ -35,5 +35,6 @@
   "page.body.signin.email.message.required": "กรุณากรอกอีเมล",
   "page.body.signin.password.placeholder": "รหัสผ่าน",
   "page.body.signin.password.message.required": "กรุณากรอกรหัสผ่าน",
+  "page.body.signin.email.or.password.invalid": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
   "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่"
 }

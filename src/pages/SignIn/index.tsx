@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import axios from "../../api";
+import { Link, useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useAppDispatch } from "../../redux";
+import { setUser } from "../../redux/slices/authSlice/authSlice";
+
 import { Row, Col, Typography } from "antd";
 import SignInComponent from "../../components/SignIn";
-import { useTranslation } from "react-i18next";
+import Swal from "sweetalert2";
 
 const { Text } = Typography;
 
@@ -13,9 +18,43 @@ export interface SignInForm {
 
 const SignIn: React.FC = () => {
   const { t } = useTranslation();
+  const history = useHistory();
+  const dispatch = useAppDispatch();
 
-  const onSignIn = (value: SignInForm) => {
-    console.log("SignIn value: ", value);
+  const onSignIn = async ({ email, password }: SignInForm) => {
+    try {
+      const res = await axios.post(
+        "/users/signin",
+        { email, password },
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+      if (res.data.user && res.data.token) {
+        dispatch(setUser(res.data.user));
+        localStorage.setItem("id", res.data.token.id);
+        localStorage.setItem("access_token", res.data.token.access_token);
+        localStorage.setItem("refresh_token", res.data.token.refresh_token);
+        history.push("/");
+      }
+    } catch (error) {
+      if (
+        error.response.data.message === "password is invalid" ||
+        error.response.data.message === "user not found"
+      ) {
+        Swal.fire({
+          icon: "error",
+          title: t("page.body.signin.email.or.password.invalid"),
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: t("message.error.internal.server.error"),
+        });
+      }
+    }
   };
 
   return (
