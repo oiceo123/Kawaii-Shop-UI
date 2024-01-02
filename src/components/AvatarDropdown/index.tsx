@@ -1,7 +1,7 @@
 import React from "react";
+import "./AvatarDropdown.scss";
 import { Dropdown, Avatar } from "antd";
 import type { MenuProps } from "antd";
-import "./AvatarDropdown.scss";
 
 interface Props {
   size: number;
