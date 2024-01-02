@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "../../api";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "../../redux";
 import { Link, useHistory } from "react-router-dom";
-import { setUser } from "../../redux/slices/authSlice/authSlice";
 
 import { Row, Col, Typography } from "antd";
 import SignUpComponent from "../../components/SignUp";
@@ -20,7 +18,6 @@ const { Text } = Typography;
 
 const SignUpContainer: React.FC = () => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const history = useHistory();
 
   const onSignUp = async ({ username, email, password }: SignUpForm) => {
@@ -38,8 +35,6 @@ const SignUpContainer: React.FC = () => {
           },
         }
       );
-      dispatch(setUser(res.data.user));
-
       if (res.data.user) {
         history.push("/signin");
       }
