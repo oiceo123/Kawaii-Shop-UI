@@ -46,12 +46,12 @@ const SignIn: React.FC = () => {
       ) {
         Swal.fire({
           icon: "error",
-          title: t("page.body.signin.email.or.password.invalid"),
+          text: t("page.body.signin.email.or.password.invalid"),
         });
       } else {
         Swal.fire({
           icon: "error",
-          title: t("message.error.internal.server.error"),
+          text: t("message.error.internal.server.error"),
         });
       }
     }

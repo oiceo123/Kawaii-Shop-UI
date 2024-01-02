@@ -42,17 +42,17 @@ const SignUpContainer: React.FC = () => {
       if (error.response.data.message === "username has been used") {
         Swal.fire({
           icon: "error",
-          title: t("page.body.signup.username.message.has.been.used"),
+          text: t("page.body.signup.username.message.has.been.used"),
         });
       } else if (error.response.data.message === "email has been used") {
         Swal.fire({
           icon: "error",
-          title: t("page.body.signup.email.message.has.been.used"),
+          text: t("page.body.signup.email.message.has.been.used"),
         });
       } else {
         Swal.fire({
           icon: "error",
-          title: t("message.error.internal.server.error"),
+          text: t("message.error.internal.server.error"),
         });
       }
     }
