@@ -3,6 +3,9 @@
   "message.signup": "Sign Up",
   "message.login": "Log In",
 
+  "_comment.message.error": "Message Error",
+  "message.error.internal.server.error": "An error occurred.",
+
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "Search for what you want.",
   "navbar.button.login": "Login",
@@ -14,6 +17,7 @@
   "_comment.page.signup": "Sign Up",
   "page.body.signup.username.placeholder": "Username",
   "page.body.signup.username.message.required": "Please input your username!",
+  "page.body.signup.username.message.has.been.used": "Username has been used",
   "page.body.signup.password.placeholder": "Password",
   "page.body.signup.password.message.required": "Please input your password!",
   "page.body.signup.confirm.password.placeholder": "Confirm Password",
@@ -22,6 +26,7 @@
   "page.body.signup.email.placeholder": "Email",
   "page.body.signup.email.message.error": "The input is not valid E-mail!",
   "page.body.signup.email.message.required": "Please input your E-mail!",
+  "page.body.signup.email.message.has.been.used": "Email has been used",
   "page.footer.signup.message.question": "If you already have an account, you can",
 
   "_comment.page.signin": "Sign In",

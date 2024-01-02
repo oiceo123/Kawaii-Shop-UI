@@ -3,6 +3,9 @@
   "message.signup": "สมัครสมาชิก",
   "message.login": "เข้าสู่ระบบ",
 
+  "_comment.message.error": "Message Error",
+  "message.error.internal.server.error": "เกิดข้อผิดพลาด",
+
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "ค้นหาสิ่งที่คุณต้องการ",
   "navbar.button.login": "เข้าสู่ระบบ",
@@ -14,6 +17,7 @@
   "_comment.page.signup": "Sign Up",
   "page.body.signup.username.placeholder": "ชื่อผู้ใช้",
   "page.body.signup.username.message.required": "กรุณากรอกชื่อผู้ใช้",
+  "page.body.signup.username.message.has.been.used": "ชื่อผู้ใช้ถูกใช้แล้ว",
   "page.body.signup.password.placeholder": "รหัสผ่าน",
   "page.body.signup.password.message.required": "กรุณากรอกรหัสผ่าน",
   "page.body.signup.confirm.password.placeholder": "ยืนยันรหัสผ่าน",
@@ -22,6 +26,7 @@
   "page.body.signup.email.placeholder": "อีเมล",
   "page.body.signup.email.message.error": "อีเมลไม่ถูกต้อง",
   "page.body.signup.email.message.required": "กรุณากรอกอีเมล",
+  "page.body.signup.email.message.has.been.used": "อีเมล์ถูกใช้แล้ว",
   "page.footer.signup.message.question": "หากคุณมีบัญชีแล้ว คุณสามารถ",
 
   "_comment.page.signin": "Sign In",
