@@ -10,13 +10,13 @@ import LoadingComponent from "./components/Loading";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <React.Suspense fallback={<LoadingComponent />}>
+    <React.Suspense fallback={<LoadingComponent />}>
+      <Provider store={store}>
+        <BrowserRouter>
           <App />
-        </React.Suspense>
-      </BrowserRouter>
-    </Provider>
+        </BrowserRouter>
+      </Provider>
+    </React.Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );
