@@ -1,19 +1,19 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import NavbarContainer from "../containers/Navbar";
+import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
+/* import PrivateRoute from "./PrivateRoute"; */
 
 const Router = () => {
   return (
-    <BrowserRouter>
-      <NavbarContainer />
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/signin" component={SignIn} exact />
-        <Route path="/signup" component={SignUp} exact />
+        <Route path={"/signup"} component={SignUp} exact />
+        {/* <PrivateRoute path="/signup" exact>
+          <SignUp />
+        </PrivateRoute> */}
       </Switch>
-    </BrowserRouter>
   );
 };
 
