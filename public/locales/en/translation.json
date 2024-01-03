@@ -5,6 +5,7 @@
 
   "_comment.message.error": "Message Error",
   "message.error.internal.server.error": "An error occurred. Please try again later.",
+  "message.error.signin.again": "Session has expired. Please log in again.",
 
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "Search for what you want.",

@@ -5,6 +5,7 @@
 
   "_comment.message.error": "Message Error",
   "message.error.internal.server.error": "เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้งในภายหลัง",
+  "message.error.signin.again": "เซสชั่นหมดอายุ กรุณาเข้าสู่ระบบใหม่อีกครั้ง",
 
   "_comment.navbar": "Navbar",
   "navbar.input.search.placeholder": "ค้นหาสิ่งที่คุณต้องการ",

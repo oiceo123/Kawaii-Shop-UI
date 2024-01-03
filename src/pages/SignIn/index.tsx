@@ -35,6 +35,7 @@ const SignIn: React.FC = () => {
       if (res.data.user && res.data.token) {
         dispatch(setUser(res.data.user));
         localStorage.setItem("id", res.data.token.id);
+        localStorage.setItem("uid", res.data.user.id);
         localStorage.setItem("access_token", res.data.token.access_token);
         localStorage.setItem("refresh_token", res.data.token.refresh_token);
         history.push("/");
