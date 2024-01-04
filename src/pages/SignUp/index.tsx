@@ -16,7 +16,7 @@ export interface SignUpForm {
 
 const { Text } = Typography;
 
-const SignUpContainer: React.FC = () => {
+const SignUp: React.FC = () => {
   const { t } = useTranslation();
   const history = useHistory();
 
@@ -81,4 +81,4 @@ const SignUpContainer: React.FC = () => {
   );
 };
 
-export default SignUpContainer;
+export default SignUp;
