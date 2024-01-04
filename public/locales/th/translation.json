@@ -37,5 +37,18 @@
   "page.body.signin.password.placeholder": "รหัสผ่าน",
   "page.body.signin.password.message.required": "กรุณากรอกรหัสผ่าน",
   "page.body.signin.email.or.password.invalid": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
-  "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่"
+  "page.footer.sigin.message.question": "คุณเพิ่งเคยเข้ามาใน Kawaii Shop ใช่หรือไม่",
+
+  "_comment.page.product-detail": "Product Detail",
+  "page_body_product_detail_rating_zero": "คนให้คะแนน",
+  "page_body_product_detail_rating_one": "คนให้คะแนน",
+  "page_body_product_detail_rating_other": "คนให้คะแนน",
+  "page.body.product-detail.sold": "ขายแล้ว",
+  "page.body.product-detail.quatity": "จำนวน",
+  "page.body.product.detail.remaining.product": "สินค้าคงเหลือ",
+  "page_body_product_detail_item_zero": "ชิ้น",
+  "page_body_product_detail_item_one": "ชิ้น",
+  "page_body_product_detail_item_other": "ชิ้น",
+  "page.body.product-detail.button.cart": "เพิ่มไปยังรถเข็น",
+  "page.body.product-detail.button.buy": "ซื้อสินค้า"
 }

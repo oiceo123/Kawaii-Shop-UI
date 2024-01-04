@@ -37,5 +37,18 @@
   "page.body.signin.password.placeholder": "Password",
   "page.body.signin.password.message.required": "Please input your password!",
   "page.body.signin.email.or.password.invalid": "The username or password is incorrect.",
-  "page.footer.sigin.message.question": "Have you just entered the Kawaii Shop, right?"
+  "page.footer.sigin.message.question": "Have you just entered the Kawaii Shop, right?",
+
+  "_comment.page.product-detail": "Product Detail",
+  "page_body_product_detail_rating_zero": "Rating",
+  "page_body_product_detail_rating_one": "Rating",
+  "page_body_product_detail_rating_other": "Ratings",
+  "page.body.product-detail.sold": "Sold",
+  "page.body.product-detail.quatity": "Quantity",
+  "page.body.product.detail.remaining.product": "Remaining product",
+  "page_body_product_detail_item_zero": "item",
+  "page_body_product_detail_item_one": "item",
+  "page_body_product_detail_item_other": "items",
+  "page.body.product-detail.button.cart": "Add To Cart",
+  "page.body.product-detail.button.buy": "Buy Now"
 }
