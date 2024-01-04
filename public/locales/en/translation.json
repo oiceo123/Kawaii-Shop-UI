@@ -50,5 +50,6 @@
   "page_body_product_detail_item_one": "item",
   "page_body_product_detail_item_other": "items",
   "page.body.product-detail.button.cart": "Add To Cart",
-  "page.body.product-detail.button.buy": "Buy Now"
+  "page.body.product-detail.button.buy": "Buy Now",
+  "page.body.product-detail.description": "Product Description"
 }

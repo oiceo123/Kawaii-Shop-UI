@@ -26,6 +26,7 @@ const ProductContainer: React.FC = () => {
                 height: "100%",
                 borderRadius: 0,
               }}
+              id={product.id}
               cover={product.images[0].url}
               title={product.title}
             />

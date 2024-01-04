@@ -50,5 +50,6 @@
   "page_body_product_detail_item_one": "ชิ้น",
   "page_body_product_detail_item_other": "ชิ้น",
   "page.body.product-detail.button.cart": "เพิ่มไปยังรถเข็น",
-  "page.body.product-detail.button.buy": "ซื้อสินค้า"
+  "page.body.product-detail.button.buy": "ซื้อสินค้า",
+  "page.body.product-detail.description": "รายละเอียดสินค้า"
 }

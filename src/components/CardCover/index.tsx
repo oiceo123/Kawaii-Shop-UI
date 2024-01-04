@@ -4,6 +4,7 @@ import { Card } from "antd";
 
 interface CardCoverProps {
   style?: React.CSSProperties;
+  id: string;
   cover: string;
   title: string;
   description?: string;
@@ -12,10 +13,10 @@ interface CardCoverProps {
 const { Meta } = Card;
 
 const CardCoverComponent: React.FC<CardCoverProps> = (props) => {
-  const { style, cover, title, description } = props;
+  const { style, id, cover, title, description } = props;
 
   return (
-    <Link to={"/detail"}>
+    <Link to={`/product/${id}`}>
       <Card
         hoverable
         style={style}

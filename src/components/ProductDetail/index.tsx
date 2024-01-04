@@ -5,8 +5,15 @@ import "./ProductDetail.scss";
 import { Row, Col, Flex, InputNumber, Button } from "antd";
 import { StarOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
-const ProductDetailComponent = () => {
+type Props = {
+  title: string;
+  price: number;
+};
+
+const ProductDetailComponent: React.FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { title, price } = props;
+
   return (
     <Flex
       className="web-components-productDetail-container "
@@ -16,9 +23,7 @@ const ProductDetailComponent = () => {
       <div>
         <Row>
           <Col span={24} className="web-components-productDetail-title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-            aliquid! Odit dolore laboriosam quidem. Nemo iste animi ipsam
-            quisquam? Accusamus.
+            {title}
           </Col>
         </Row>
         <Row className="web-components-productDetail-row">
@@ -50,7 +55,7 @@ const ProductDetailComponent = () => {
         </Row>
         <Row className="web-components-productDetail-row">
           <Col span={24} className="web-components-productDetail-price">
-            &#3647; 499
+            &#3647; {price}
           </Col>
         </Row>
       </div>

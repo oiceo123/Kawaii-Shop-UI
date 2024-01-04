@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 /* import PrivateRoute from "./PrivateRoute"; */
-import ProductDetailContainer from "../containers/ProductDetail";
+import ProductDetail from "../pages/ProductDetail";
 
 const Router = () => {
   return (
@@ -11,7 +11,7 @@ const Router = () => {
       <Route path="/" component={Home} exact />
       <Route path="/signin" component={SignIn} exact />
       <Route path={"/signup"} component={SignUp} exact />
-      <Route path={"/detail"} component={ProductDetailContainer} exact />
+      <Route path={"/product/:id"} component={ProductDetail} exact />
       {/* <PrivateRoute path="/signup" exact>
           <SignUp />
         </PrivateRoute> */}
