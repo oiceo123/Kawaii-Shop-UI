@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           <CategoryContainer />
         </Col>
       </Row>
-      <Row justify={"center"} style={{ marginTop: "24px" }}>
+      <Row justify={"center"} style={{ marginTop: "24px", marginBottom: "30px" }}>
         <Col span={21}>
           <Row className="web-home-row-1cbcbe25">
             <Col span={24}>
